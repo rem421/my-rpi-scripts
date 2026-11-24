@@ -6,4 +6,5 @@ export GDK_BACKEND=x11
 export MOZ_ENABLE_WAYLAND=0
 vncconfig -nowin &
 ~/.local/bin/rpi-panel-float.sh &
+~/.local/bin/rpi-wallpaper-sync.sh &
 exec startxfce4

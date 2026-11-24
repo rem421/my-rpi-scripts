@@ -5,8 +5,10 @@ Scripts and remote desktop/environment configuration for Raspberry Pi 5 (Ubuntu 
 ## Contents
 - `bin/rpi-clip-daemon.py` – lightweight GTK3 (`GDK_BACKEND=x11`) daemon receiving clipboard updates from NixOS (Wayland/Niri) onto VNC display `:2`.
 - `bin/rpi-panel-float.sh` – zero-CPU X11 RandR watcher keeping the XFCE top bar and bottom dock floating and centered on any TigerVNC window resize.
+- `bin/rpi-wallpaper-sync.sh` – zero-CPU watcher syncing Nautilus "Set as Wallpaper" actions directly to XFCE.
 - `bin/apply-xfce-theme.sh` – applies the Material Design 3 XFCE/GTK/GNOME Terminal configuration (`Orchis-Purple-Dark-Compact`, `Tela-circle-purple-dark`, XRender compositing, CSD apps).
 - `vnc/xstartup` – TigerVNC startup configuration (XFCE + `vncconfig` + `rpi-panel-float.sh` + forced X11 backend).
+- `bin/rpi-wallpaper-sync.sh` – zero-CPU watcher syncing Nautilus "Set as Wallpaper" actions directly to XFCE.
 - `xfce/gtk.css` – custom GTK3 styling for floating solid dark bars, hover states, and rounded GNOME Terminal corners.
 - `xfce/helpers.rc` – sets Nautilus, GNOME Terminal, and Firefox as default XFCE apps.
 - `install.sh` – full bootstrap script for a fresh Raspberry Pi 5.
