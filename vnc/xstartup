@@ -5,4 +5,5 @@ export XDG_DATA_DIRS="/usr/local/share:/usr/share:/var/lib/snapd/desktop"
 export GDK_BACKEND=x11
 export MOZ_ENABLE_WAYLAND=0
 vncconfig -nowin &
+~/.local/bin/rpi-panel-float.sh &
 exec startxfce4

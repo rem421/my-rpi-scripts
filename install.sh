@@ -30,16 +30,22 @@ git clone --depth=1 https://github.com/vinceliuice/Tela-circle-icon-theme.git "$
 "$THEME_TMP/Tela-circle-icon-theme/install.sh" purple
 rm -rf "$THEME_TMP"
 
-echo "[INFO] Step 5/6: Installing VNC xstartup and GTK clipboard daemon..."
-mkdir -p ~/.local/bin ~/.vnc ~/dev
+echo "[INFO] Step 5/6: Installing VNC xstartup, clipboard daemon, floating panel watcher and XFCE configs..."
+mkdir -p ~/.local/bin ~/.vnc ~/.config/gtk-3.0 ~/.config/xfce4 ~/dev
 cp "$SCRIPT_DIR/bin/rpi-clip-daemon.py" ~/.local/bin/rpi-clip-daemon.py
-chmod +x ~/.local/bin/rpi-clip-daemon.py
+cp "$SCRIPT_DIR/bin/rpi-panel-float.sh" ~/.local/bin/rpi-panel-float.sh
+cp "$SCRIPT_DIR/bin/apply-xfce-theme.sh" ~/.local/bin/apply-xfce-theme.sh
+chmod +x ~/.local/bin/rpi-clip-daemon.py ~/.local/bin/rpi-panel-float.sh ~/.local/bin/apply-xfce-theme.sh
 cp "$SCRIPT_DIR/vnc/xstartup" ~/.vnc/xstartup
 chmod +x ~/.vnc/xstartup
+cp "$SCRIPT_DIR/xfce/gtk.css" ~/.config/gtk-3.0/gtk.css
+cp "$SCRIPT_DIR/xfce/helpers.rc" ~/.config/xfce4/helpers.rc
 
 echo "[INFO] Step 6/6: Disabling GDM autologin (prevents Remote Login conflict)..."
 if [ -f /etc/gdm3/custom.conf ]; then
   sudo sed -i "s/^AutomaticLoginEnable.*/AutomaticLoginEnable=false/" /etc/gdm3/custom.conf
 fi
 
-echo "[SUCCESS] RPi5 environment is ready. Start VNC with: vncserver :2 -geometry 1920x1080 -depth 24"
+echo "[SUCCESS] RPi5 environment is ready."
+echo "[INFO] Start VNC with: vncserver :2 -geometry 1920x1080 -depth 24"
+echo "[INFO] Inside the VNC session, run: apply-xfce-theme.sh"

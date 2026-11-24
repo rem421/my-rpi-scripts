@@ -1,0 +1,63 @@
+#XfcePanelWindow.xfce4-panel.background {
+  background-color: #1c1922;
+  border-radius: 14px;
+  border: 1px solid #4a2d5c;
+  box-shadow: none;
+}
+
+.xfce4-panel.background:not(#XfcePanelWindow),
+.xfce4-panel plug {
+  background-color: #1c1922;
+  border: none;
+  border-radius: 0px;
+  box-shadow: none;
+}
+
+.xfce4-panel button,
+.xfce4-panel.background button,
+.xfce4-panel.background button.flat {
+  background-image: none;
+  background-color: transparent;
+  border: none;
+  border-radius: 8px;
+  margin: 2px;
+  padding: 2px 4px;
+  box-shadow: none;
+  transition: background-color 120ms ease;
+}
+
+.xfce4-panel button:hover,
+.xfce4-panel.background button:hover,
+.xfce4-panel.background button.flat:hover {
+  background-image: none;
+  background-color: #3a244b;
+  box-shadow: none;
+}
+
+.xfce4-panel button:checked,
+.xfce4-panel button:active,
+.xfce4-panel.background button:checked,
+.xfce4-panel.background button.flat:checked {
+  background-image: none;
+  background-color: #52316b;
+  box-shadow: none;
+}
+
+/* Rounded bottom corners for GNOME Terminal (overrides Orchis border-radius: 0) */
+terminal-window.background.csd,
+terminal-window.background.csd decoration {
+  border-radius: 12px;
+  background-color: #1c1922;
+}
+
+terminal-window.background.csd.maximized,
+terminal-window.background.csd.maximized decoration {
+  border-radius: 0px;
+}
+
+terminal-window.background.csd > box {
+  background-color: #1c1922;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  padding-bottom: 10px;
+}
