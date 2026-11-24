@@ -1,15 +1,15 @@
 # my-rpi-scripts
 
-Skrypty i konfiguracja środowiska zdalnego dla Raspberry Pi 5 (Ubuntu 24.04 + XFCE/TigerVNC + ROS 2).
+Scripts and remote desktop/environment configuration for Raspberry Pi 5 (Ubuntu 24.04 + XFCE/TigerVNC + ROS 2).
 
-## Zawartość
-- `bin/rpi-clip-daemon.py` – lekki daemon GTK3 (`GDK_BACKEND=x11`) przyjmujący schowek z NixOS (Wayland/Niri) na ekran VNC (`:2`).
-- `vnc/xstartup` – konfiguracja startowa TigerVNC (XFCE + `vncconfig` + `XDG_DATA_DIRS` dla Snapów).
-- `install.sh` – instalacja zależności (SSH, Avahi, TigerVNC, XFCE), reguł UFW i kopiowanie skryptów.
+## Contents
+- `bin/rpi-clip-daemon.py` – lightweight GTK3 (`GDK_BACKEND=x11`) daemon receiving clipboard updates from NixOS (Wayland/Niri) onto VNC display `:2`.
+- `vnc/xstartup` – TigerVNC startup configuration (XFCE + `vncconfig` + `XDG_DATA_DIRS` for Snaps).
+- `install.sh` – installs dependencies (SSH, Avahi, TigerVNC, XFCE), UFW firewall rules, and copies the scripts.
 
-## Użycie na świeżym RPi5
+## Usage on a fresh RPi5
 ```bash
-git clone <url-repo> ~/my-rpi-scripts
+git clone <repo-url> ~/my-rpi-scripts
 cd ~/my-rpi-scripts
 ./install.sh
 ```
