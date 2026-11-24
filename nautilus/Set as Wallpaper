@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# Native Nautilus right-click script: sets the selected image as XFCE wallpaper.
+FILE=$(printf "%s\n" "$NAUTILUS_SCRIPT_SELECTED_FILE_PATHS" | head -n 1)
+[[ -f "$FILE" ]] || exit 1
+
+for prop in $(xfconf-query -c xfce4-desktop -l 2>/dev/null | grep "last-image"); do
+  xfconf-query -c xfce4-desktop -p "$prop" -s "$FILE"
+done
+for prop in $(xfconf-query -c xfce4-desktop -l 2>/dev/null | grep "image-style"); do
+  xfconf-query -c xfce4-desktop -p "$prop" -s 5
+done

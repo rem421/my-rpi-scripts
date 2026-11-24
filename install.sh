@@ -34,13 +34,14 @@ echo "[INFO] Step 5/6: Installing VNC xstartup, clipboard daemon, floating panel
 mkdir -p ~/.local/bin ~/.vnc ~/.config/gtk-3.0 ~/.config/xfce4 ~/dev
 cp "$SCRIPT_DIR/bin/rpi-clip-daemon.py" ~/.local/bin/rpi-clip-daemon.py
 cp "$SCRIPT_DIR/bin/rpi-panel-float.sh" ~/.local/bin/rpi-panel-float.sh
-cp "$SCRIPT_DIR/bin/rpi-wallpaper-sync.sh" ~/.local/bin/rpi-wallpaper-sync.sh
 cp "$SCRIPT_DIR/bin/apply-xfce-theme.sh" ~/.local/bin/apply-xfce-theme.sh
-chmod +x ~/.local/bin/rpi-clip-daemon.py ~/.local/bin/rpi-panel-float.sh ~/.local/bin/rpi-wallpaper-sync.sh ~/.local/bin/apply-xfce-theme.sh
 cp "$SCRIPT_DIR/vnc/xstartup" ~/.vnc/xstartup
 chmod +x ~/.vnc/xstartup
 cp "$SCRIPT_DIR/xfce/gtk.css" ~/.config/gtk-3.0/gtk.css
 cp "$SCRIPT_DIR/xfce/helpers.rc" ~/.config/xfce4/helpers.rc
+mkdir -p ~/.local/share/nautilus/scripts
+cp "$SCRIPT_DIR/nautilus/Set as Wallpaper" ~/.local/share/nautilus/scripts/"Set as Wallpaper"
+chmod +x ~/.local/share/nautilus/scripts/"Set as Wallpaper"
 
 echo "[INFO] Step 6/6: Disabling GDM autologin (prevents Remote Login conflict)..."
 if [ -f /etc/gdm3/custom.conf ]; then
