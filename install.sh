@@ -19,7 +19,7 @@ sudo snap remove firefox || true
 sudo add-apt-repository -y ppa:mozillateam/ppa
 printf "Package: *\nPin: release o=LP-PPA-mozillateam\nPin-Priority: 1001\n" | sudo tee /etc/apt/preferences.d/mozilla-firefox > /dev/null
 sudo apt update
-sudo apt install -y firefox
+sudo apt install -y --allow-downgrades firefox
 
 echo "[INFO] Step 4/5: Installing VNC xstartup and GTK clipboard daemon..."
 mkdir -p ~/.local/bin ~/.vnc ~/dev
